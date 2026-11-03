@@ -1,0 +1,172 @@
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9edf2;
+    color: #333;
+    padding: 30px 15px;
+    line-height: 1.5;
+}
+
+/* Resume Card */
+.resume-card {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 45px 50px;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.10);
+}
+
+/* Header */
+.header {
+    background: #172d4d;
+    color: white;
+    padding: 30px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.header h3 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #cbd8e8;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 25px;
+    font-size: 13px;
+    color: #e1e8f0;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 25px;
+}
+
+.section h2 {
+    color: #172d4d;
+    font-size: 17px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #172d4d;
+    padding-bottom: 7px;
+    margin-bottom: 15px;
+}
+
+/* Content */
+.section p {
+    font-size: 13px;
+    margin-bottom: 7px;
+    color: #444;
+    text-align: justify;
+}
+
+.item {
+    margin-bottom: 17px;
+    position: relative;
+}
+
+.item h3 {
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.item .date {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.tech {
+    color: #526b8a !important;
+    font-size: 12px !important;
+    font-style: italic;
+}
+
+/* Download Button */
+#download-btn {
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 25px;
+    background: #172d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#download-btn:hover {
+    background: #294d78;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .resume-card {
+        padding: 20px;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* Print Settings */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .resume-card {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    #download-btn {
+        display: none;
+    }
+
+    .section, .item {
+        break-inside: avoid;
+    }
+
+    .header {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}

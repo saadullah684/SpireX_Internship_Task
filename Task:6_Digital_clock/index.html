@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="clock-container">
+        <div class="clock-card">
+
+            <p class="greeting">WELCOME TO YOUR DIGITAL CLOCK</p>
+
+            <h1>Digital Clock</h1>
+
+            <div class="date-section">
+                <span id="day">Monday</span>
+                <span class="separator">|</span>
+                <span id="date">January 01, 2026</span>
+            </div>
+
+            <div class="time-section">
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <small>HOURS</small>
+                </div>
+
+                <span class="colon">:</span>
+
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <small>MINUTES</small>
+                </div>
+
+                <span class="colon">:</span>
+
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <small>SECONDS</small>
+                </div>
+            </div>
+
+            <div class="period" id="period">AM</div>
+
+            <button id="formatBtn">Switch to 24-Hour Format</button>
+
+            <p class="status">
+                <span class="status-dot"></span>
+                LIVE CLOCK
+            </p>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WeatherNow</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ================= HEADER ================= -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                ☁️ WeatherNow
+            </div>
+            <div class="navlinks">
+                <a href="#home">Home</a>
+                <a href="#forecast">Forecast</a>
+                <a href="#about">About</a>
+            </div>
+
+            <div class="theme">
+                <label class="switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main>
+        <!-- ================= HOME ================= -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+
+                <h1>Check the Weather</h1>
+                <h1>Anywhere</h1>
+                <p>
+                    Get real-time weather updates and 7-days forecast
+                    for your favourite cities around the world.
+                </p>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="search-box">
+
+                <input type="text" id="cityInput" placeholder="Search city...">
+
+                <button id="searchBtn">
+                    Search
+                </button>
+
+            </div>
+
+            <!-- CURRENT WEATHER CARD -->
+            <div class="weather-card">
+                <div class="weather-location">
+                    <h2 id="cityName">Karachi</h2>
+                    <p id="countryName">Pakistan</p>
+                    <p id="date">
+                        Monday, 23 September
+                    </p>
+                </div>
+
+                <div class="weather-main">
+
+                    <div class="weather-icon" id="weatherIcon">
+                        ☀️
+                    </div>
+
+                    <div class="temperature">
+                        <h1 id="temperature">32°C</h1>
+
+                        <p id="condition">
+                            Clear Sky
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- WEATHER DETAILS -->
+                <div class="weather-details">
+
+                    <div class="detail">
+
+                        <span>💧</span>
+
+                        <div>
+                            <p>Humidity</p>
+                            <strong id="humidity">
+                                60%
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>💨</span>
+
+                        <div>
+                            <p>Wind</p>
+                            <strong id="wind">
+                                12 km/h
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>🌡️</span>
+
+                        <div>
+                            <p>Feels Like</p>
+                            <strong id="feelsLike">
+                                34°C
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FORECAST ================= -->
+       <section id="forecast" class="forecast">
+
+    <div class="section-heading">
+
+        <h2>7 Days Forecast</h2>
+
+        <p>
+            Weather forecast for the upcoming days
+        </p>
+
+    </div>
+
+    <div class="forecast-container" id="forecastContainer">
+
+        <!-- JavaScript yahan 7 forecast cards banayegi -->
+
+    </div>
+
+</section>
+
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about" class="about">
+
+            <div class="section-heading">
+
+                <h2>About WeatherNow</h2>
+
+                <p>
+                    WeatherNow is a weather application that provides
+                    real-time weather information for cities around
+                    the world.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <p>
+            © 2026 WeatherNow. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

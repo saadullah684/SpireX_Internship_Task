@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Country Explorer | Country Information App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="app-header">
+
+            <div class="header-content">
+
+                <div class="logo-icon">🌍</div>
+
+                <div class="title-group">
+
+                    <h1>Country Explorer</h1>
+
+                    <p class="subtitle">
+                        Search and explore real-time geographic and demographic data worldwide
+                    </p>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Search Section -->
+            <section class="search-section" aria-label="Search Country">
+
+                <div class="search-wrapper">
+
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="search-input"
+                        placeholder="Search for a country (e.g. Pakistan, India, Japan)..."
+                        autocomplete="off"
+                        spellcheck="false"
+                        aria-label="Country name"
+                    >
+
+                    <button
+                        type="button"
+                        id="clear-btn"
+                        class="clear-btn"
+                        title="Clear input"
+                        aria-label="Clear search input"
+                    >
+                        ✕
+                    </button>
+
+                    <button
+                        type="button"
+                        id="search-btn"
+                        class="search-btn"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+
+                <!-- Popular Searches -->
+                <div class="suggestions-container">
+
+                    <span class="suggestions-label">
+                        Popular searches:
+                    </span>
+
+                    <div class="suggestion-tags">
+
+                        <button type="button" class="suggestion-tag" data-country="Pakistan">
+                            🇵🇰 Pakistan
+                        </button>
+
+                        <button type="button" class="suggestion-tag" data-country="India">
+                            🇮🇳 India
+                        </button>
+
+                        <button type="button" class="suggestion-tag" data-country="United States">
+                            🇺🇸 USA
+                        </button>
+
+                        <button type="button" class="suggestion-tag" data-country="Japan">
+                            🇯🇵 Japan
+                        </button>
+
+                        <button type="button" class="suggestion-tag" data-country="United Kingdom">
+                            🇬🇧 UK
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Display Section -->
+            <section class="display-section" aria-live="polite">
+
+
+                <!-- Welcome State -->
+                <div id="welcome-state" class="state-card welcome-card">
+
+                    <div class="welcome-icon">🗺️</div>
+
+                    <h2>Welcome to Country Explorer</h2>
+
+                    <p>
+                        Enter any country name above or click one of the popular suggestions
+                        to view detailed information including flags, capital, population,
+                        currencies, and geography.
+                    </p>
+
+                </div>
+
+
+                <!-- Loading State -->
+                <div id="loading-state" class="state-card loading-card hidden">
+
+                    <div class="loading-spinner"></div>
+
+                    <p class="loading-text">
+                        Fetching country information...
+                    </p>
+
+                </div>
+
+
+                <!-- Error State -->
+                <div id="error-state" class="state-card error-card hidden">
+
+                    <div class="error-icon">⚠️</div>
+
+                    <div class="error-content">
+
+                        <h3 id="error-title">
+                            Country Not Found
+                        </h3>
+
+                        <p id="error-message">
+                            Please check the spelling and try again.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Country Information Card -->
+                <article id="country-card" class="country-card hidden">
+
+
+                    <!-- Country Hero -->
+                    <div class="card-hero">
+
+                        <div class="flag-container">
+
+                            <img
+                                id="country-flag"
+                                class="country-flag"
+                                src=""
+                                alt="Country Flag"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+
+                        <div class="country-header-info">
+
+                            <h2 id="country-name" class="country-name">
+                                Country Name
+                            </h2>
+
+                            <p id="country-official-name" class="country-official-name">
+                                Official Name
+                            </p>
+
+
+                            <div class="country-badges">
+
+                                <span id="badge-region" class="badge badge-region">
+                                    Region
+                                </span>
+
+                                <span id="badge-code" class="badge badge-code">
+                                    Code
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Country Details Grid -->
+                    <div class="card-details-grid">
+
+
+                        <!-- Capital -->
+                        <div class="detail-box">
+
+                            <span class="detail-icon">🏛️</span>
+
+                            <div class="detail-meta">
+
+                                <span class="detail-label">
+                                    Capital City
+                                </span>
+
+                                <strong id="country-capital" class="detail-value">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Population -->
+                        <div class="detail-box">
+
+                            <span class="detail-icon">👥</span>
+
+                            <div class="detail-meta">
+
+                                <span class="detail-label">
+                                    Population
+                                </span>
+
+                                <strong id="country-population" class="detail-value">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Region -->
+                        <div class="detail-box">
+
+                            <span class="detail-icon">🌐</span>
+
+                            <div class="detail-meta">
+
+                                <span class="detail-label">
+                                    Region & Subregion
+                                </span>
+
+                                <strong id="country-region-full" class="detail-value">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Currency -->
+                        <div class="detail-box">
+
+                            <span class="detail-icon">💰</span>
+
+                            <div class="detail-meta">
+
+                                <span class="detail-label">
+                                    Currency
+                                </span>
+
+                                <strong id="country-currency" class="detail-value">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Language -->
+                        <div class="detail-box">
+
+                            <span class="detail-icon">🗣️</span>
+
+                            <div class="detail-meta">
+
+                                <span class="detail-label">
+                                    Official Language
+                                </span>
+
+                                <strong id="country-language" class="detail-value">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Country Code -->
+                        <div class="detail-box">
+
+                            <span class="detail-icon">🏷️</span>
+
+                            <div class="detail-meta">
+
+                                <span class="detail-label">
+                                    Country Code (ISO)
+                                </span>
+
+                                <strong id="country-code" class="detail-value">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Area -->
+                        <div class="detail-box">
+
+                            <span class="detail-icon">📏</span>
+
+                            <div class="detail-meta">
+
+                                <span class="detail-label">
+                                    Total Area
+                                </span>
+
+                                <strong id="country-area" class="detail-value">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Continent -->
+                        <div class="detail-box">
+
+                            <span class="detail-icon">🗺️</span>
+
+                            <div class="detail-meta">
+
+                                <span class="detail-label">
+                                    Continent
+                                </span>
+
+                                <strong id="country-continent" class="detail-value">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Card Actions -->
+                    <div class="card-actions">
+
+                        <button
+                            type="button"
+                            id="reset-btn"
+                            class="reset-action-btn"
+                        >
+                            🔄 Search Another Country
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="app-footer">
+
+            <p>
+                Country Explorer &bull;
+                Built with HTML5, CSS3 &amp; JavaScript &bull;
+                Powered by REST Countries
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- Application Script -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,463 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #f4f7fc;
+    color: #172033;
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 25px;
+}
+
+/* Header */
+
+.app-header {
+    background: linear-gradient(135deg, #123c69, #176b87);
+    color: white;
+    padding: 35px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    box-shadow: 0 10px 30px rgba(18, 60, 105, 0.15);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-icon {
+    font-size: 48px;
+}
+
+.title-group h1 {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #dceaf4;
+    margin-top: 8px;
+    line-height: 1.6;
+}
+
+/* Search */
+
+.search-section {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    margin-bottom: 30px;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #e1e7ef;
+    padding: 8px 12px;
+    border-radius: 12px;
+}
+
+.search-icon {
+    font-size: 20px;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 12px 5px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.clear-btn {
+    border: none;
+    background: transparent;
+    color: #8a94a6;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.search-btn {
+    background: #176b87;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 12px 25px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.search-btn:hover {
+    background: #123c69;
+}
+
+.suggestions-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.suggestions-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #697586;
+}
+
+.suggestion-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.suggestion-tag {
+    background: #edf5f8;
+    color: #176b87;
+    border: 1px solid #d7e9ef;
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+.suggestion-tag:hover {
+    background: #176b87;
+    color: white;
+}
+
+/* Common State Cards */
+
+.state-card {
+    background: white;
+    border-radius: 16px;
+    padding: 55px 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.welcome-icon,
+.error-icon {
+    font-size: 55px;
+    margin-bottom: 18px;
+}
+
+.welcome-card h2 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.welcome-card p,
+.error-card p {
+    color: #778196;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Loading */
+
+.loading-spinner {
+    width: 45px;
+    height: 45px;
+    border: 4px solid #e1edf2;
+    border-top-color: #176b87;
+    border-radius: 50%;
+    margin: auto auto 20px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    color: #697586;
+    font-size: 14px;
+}
+
+/* Error */
+
+.error-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.error-icon {
+    margin: 0;
+}
+
+.error-content {
+    text-align: left;
+}
+
+.error-content h3 {
+    margin-bottom: 8px;
+}
+
+/* Country Card */
+
+.country-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+.card-hero {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 35px;
+    background: linear-gradient(135deg, #f0f7fa, #e5f0f5);
+}
+
+.flag-container {
+    width: 190px;
+    height: 125px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    flex-shrink: 0;
+}
+
+.country-flag {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.country-name {
+    font-size: 29px;
+    font-weight: 800;
+    color: #123c69;
+}
+
+.country-official-name {
+    font-size: 13px;
+    color: #718096;
+    margin: 8px 0 15px;
+    line-height: 1.6;
+}
+
+.country-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge {
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.badge-region {
+    background: #dceff5;
+    color: #176b87;
+}
+
+.badge-code {
+    background: #e8eafa;
+    color: #5259a7;
+}
+
+/* Information Grid */
+
+.card-details-grid {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.detail-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #e9edf2;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.detail-box:hover {
+    border-color: #176b87;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(23,107,135,0.07);
+}
+
+.detail-icon {
+    font-size: 27px;
+    background: #eff6f8;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.detail-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.detail-label {
+    font-size: 11px;
+    color: #8791a2;
+    font-weight: 600;
+}
+
+.detail-value {
+    font-size: 14px;
+    color: #26364b;
+    overflow-wrap: anywhere;
+}
+
+/* Actions */
+
+.card-actions {
+    padding: 0 30px 30px;
+    text-align: center;
+}
+
+.reset-action-btn {
+    background: #123c69;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 9px;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reset-action-btn:hover {
+    background: #176b87;
+}
+
+/* Footer */
+
+.app-footer {
+    text-align: center;
+    padding: 30px 10px;
+    color: #8a94a6;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+    .app-container {
+        padding: 18px 12px;
+    }
+
+    .app-header {
+        padding: 25px 18px;
+    }
+
+    .header-content {
+        gap: 12px;
+    }
+
+    .logo-icon {
+        font-size: 35px;
+    }
+
+    .title-group h1 {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 11px;
+    }
+
+    .search-section {
+        padding: 17px;
+    }
+
+    .search-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .search-input {
+        flex: 1;
+        width: 50%;
+    }
+
+    .search-btn {
+        width: 100%;
+    }
+
+    .card-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 15px;
+    }
+
+    .flag-container {
+        width: 180px;
+        height: 115px;
+    }
+
+    .country-name {
+        font-size: 24px;
+    }
+
+    .country-badges {
+        justify-content: center;
+    }
+
+    .card-details-grid {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .detail-box {
+        padding: 15px;
+    }
+
+    .error-card {
+        flex-direction: column;
+    }
+
+    .error-content {
+        text-align: center;
+    }
+}

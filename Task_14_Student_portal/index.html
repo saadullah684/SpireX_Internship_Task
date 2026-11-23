@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternHub | Student Internship Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <nav class="navbar container">
+        <a href="#home" class="logo">✦ InternHub</a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#internships">Internships</a>
+            <a href="#applications">My Applications</a>
+            <a href="#about">About</a>
+        </div>
+
+        <a href="#internships" class="nav-btn">Find Internships</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <span class="tag">YOUR CAREER STARTS HERE</span>
+            <h1>Find Your Dream <span>Internship</span> Today</h1>
+            <p>
+                Explore exciting internship opportunities, connect with
+                companies and take the first step towards your professional career.
+            </p>
+
+            <a href="#internships" class="primary-btn">Explore Internships →</a>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>500+</strong>
+                    <small>Opportunities</small>
+                </div>
+                <div>
+                    <strong>100+</strong>
+                    <small>Companies</small>
+                </div>
+                <div>
+                    <strong>2K+</strong>
+                    <small>Students</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900"
+                 alt="Students working together">
+        </div>
+    </div>
+</section>
+
+<!-- Categories -->
+<section class="section container" id="about">
+    <div class="section-heading">
+        <span class="tag">EXPLORE CAREER FIELDS</span>
+        <h2>Popular Categories</h2>
+        <p>Find opportunities that match your interests and skills.</p>
+    </div>
+
+    <div class="category-grid">
+        <div class="category-card">
+            <span>💻</span>
+            <h3>Web Development</h3>
+            <p>Frontend and Backend</p>
+        </div>
+
+        <div class="category-card">
+            <span>🤖</span>
+            <h3>Artificial Intelligence</h3>
+            <p>AI and Machine Learning</p>
+        </div>
+
+        <div class="category-card">
+            <span>🧪</span>
+            <h3>Software Testing</h3>
+            <p>QA and Automation</p>
+        </div>
+
+        <div class="category-card">
+            <span>📊</span>
+            <h3>Data Science</h3>
+            <p>Analytics and Data</p>
+        </div>
+    </div>
+</section>
+
+<!-- Internship Listings -->
+<section class="section listings-section" id="internships">
+    <div class="container">
+        <div class="section-heading">
+            <span class="tag">FIND YOUR OPPORTUNITY</span>
+            <h2>Latest Internships</h2>
+            <p>Explore available internships and apply for your favourite role.</p>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="filter-box">
+            <input type="search" id="searchInput"
+                   placeholder="Search by job title or company...">
+
+            <select id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                <option value="Software Testing">Software Testing</option>
+                <option value="Data Science">Data Science</option>
+            </select>
+
+            <select id="modeFilter">
+                <option value="">All Work Modes</option>
+                <option value="Remote">Remote</option>
+                <option value="On-site">On-site</option>
+                <option value="Hybrid">Hybrid</option>
+            </select>
+
+            <button id="clearFilters" class="clear-btn">Clear Filters</button>
+        </div>
+
+        <div class="results-info">
+            <p id="resultsCount">Showing internships</p>
+        </div>
+
+        <div class="internship-grid" id="internshipGrid"></div>
+
+        <div id="noResults" class="no-results" hidden>
+            <span>🔍</span>
+            <h3>No internships found</h3>
+            <p>Try changing your search or filters.</p>
+        </div>
+    </div>
+</section>
+
+<!-- My Applications -->
+<section class="section container" id="applications">
+    <div class="section-heading">
+        <span class="tag">TRACK YOUR PROGRESS</span>
+        <h2>My Applications</h2>
+        <p>Keep track of the internships you have applied for.</p>
+    </div>
+
+    <div class="application-summary">
+        <div>
+            <strong id="totalApplications">0</strong>
+            <span>Total Applications</span>
+        </div>
+        <div>
+            <strong id="pendingApplications">0</strong>
+            <span>Pending</span>
+        </div>
+        <div>
+            <strong id="selectedApplications">0</strong>
+            <span>Selected</span>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Company</th>
+                    <th>Applied Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="applicationTable">
+                <tr>
+                    <td colspan="4" class="empty-table">
+                        No applications yet. Explore internships to get started!
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section why-section">
+    <div class="container">
+        <div class="section-heading">
+            <span class="tag">WHY INTERNHUB?</span>
+            <h2>Start Your Professional Journey</h2>
+        </div>
+
+        <div class="why-grid">
+            <div>
+                <span>🔎</span>
+                <h3>Easy Exploration</h3>
+                <p>Discover opportunities from different career fields.</p>
+            </div>
+            <div>
+                <span>📝</span>
+                <h3>Simple Application</h3>
+                <p>Apply for internships through an easy application form.</p>
+            </div>
+            <div>
+                <span>📈</span>
+                <h3>Track Progress</h3>
+                <p>Monitor your internship applications in one place.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container footer-content">
+        <a href="#home" class="logo">✦ InternHub</a>
+        <p>Connecting students with opportunities and building brighter futures.</p>
+        <p class="copyright">© 2026 InternHub. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Details Modal -->
+<div class="modal" id="detailsModal">
+    <div class="modal-content">
+        <button class="close-btn" data-close="detailsModal" aria-label="Close">×</button>
+        <div id="detailsContent"></div>
+    </div>
+</div>
+
+<!-- Apply Modal -->
+<div class="modal" id="applyModal">
+    <div class="modal-content">
+        <button class="close-btn" data-close="applyModal" aria-label="Close">×</button>
+
+        <h2>Apply for Internship</h2>
+        <p class="modal-subtitle" id="applyPosition"></p>
+
+        <form id="applicationForm">
+            <input type="hidden" id="internshipId">
+
+            <label for="studentName">Full Name</label>
+            <input type="text" id="studentName" placeholder="Enter your full name" required>
+
+            <label for="studentEmail">Email Address</label>
+            <input type="email" id="studentEmail" placeholder="Enter your email" required>
+
+            <label for="studentPhone">Phone Number</label>
+            <input type="tel" id="studentPhone" placeholder="03XXXXXXXXX" required>
+
+            <label for="studentEducation">Education</label>
+            <input type="text" id="studentEducation" placeholder="e.g. BS Software Engineering" required>
+
+            <label for="studentSkills">Skills</label>
+            <textarea id="studentSkills" rows="3" placeholder="Enter your skills" required></textarea>
+
+            <button type="submit" class="primary-btn submit-btn">Submit Application →</button>
+            <p id="applicationMessage" role="status" aria-live="polite"></p>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
